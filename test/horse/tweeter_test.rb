@@ -1,6 +1,6 @@
 require_relative '../test_helper'
 
-describe Tweeter do
+describe Horse::Tweeter do
 
   describe "tweet" do
 
@@ -13,7 +13,7 @@ describe Tweeter do
 
       Twitter.expects(:client).returns client
 
-      Tweeter.tweet tweet
+      Horse::Tweeter.tweet tweet
 
     end
 

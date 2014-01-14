@@ -1,6 +1,6 @@
 require_relative '../test_helper'
 
-describe PreviouslyMadeTweets do
+describe Horse::PreviouslyMadeTweets do
 
   it "should return the text of the tweets" do
     twitter_username = Object.new
@@ -13,7 +13,7 @@ describe PreviouslyMadeTweets do
 
     Twitter.stubs(:client).returns client
 
-    results = PreviouslyMadeTweets.all
+    results = Horse::PreviouslyMadeTweets.all
 
     results.count.must_equal 2
     tweets.each { |x| results.include?(x.text).must_equal true }

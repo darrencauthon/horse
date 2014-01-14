@@ -1,8 +1,8 @@
-module FunnyTweet
+module Horse::FunnyTweet
   def self.next
-    results = PendingTweets.all
+    results = Horse::PendingTweets.all
 
-    previously_made_tweets = PreviouslyMadeTweets.all
+    previously_made_tweets = Horse::PreviouslyMadeTweets.all
     if previously_made_tweets.count > 0
       results = results.reject { |x| previously_made_tweets.include? x }
     end

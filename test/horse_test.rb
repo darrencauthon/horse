@@ -24,8 +24,8 @@ describe Horse do
       it "should tweet it" do
         funny_tweet = Object.new
 
-        FunnyTweet.stubs(:next).returns funny_tweet
-        Tweeter.expects(:tweet).with funny_tweet
+        Horse::FunnyTweet.stubs(:next).returns funny_tweet
+        Horse::Tweeter.expects(:tweet).with funny_tweet
 
         Horse.tweet_something_new
       end
@@ -35,8 +35,8 @@ describe Horse do
     describe "no funny tweet exists" do
 
       it "should not tweet it" do
-        FunnyTweet.stubs(:next).returns nil
-        Tweeter.expects(:tweet).never
+        Horse::FunnyTweet.stubs(:next).returns nil
+        Horse::Tweeter.expects(:tweet).never
 
         Horse.tweet_something_new
       end
