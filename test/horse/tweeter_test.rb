@@ -11,7 +11,7 @@ describe Horse::Tweeter do
       client = Object.new
       client.expects(:update).with tweet
 
-      Twitter.expects(:client).returns client
+      Horse.expects(:twitter_client).returns client
 
       Horse::Tweeter.tweet tweet
 

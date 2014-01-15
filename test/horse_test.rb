@@ -12,8 +12,8 @@ describe Horse do
 
   describe "setting up" do
     it "should blkjsd" do
-      Horse.setup
-      Twitter.client.is_a?(Twitter::REST::Client).must_equal true
+      Horse.setup({})
+      Horse.twitter_client.is_a?(Twitter::REST::Client).must_equal true
     end
   end
 
