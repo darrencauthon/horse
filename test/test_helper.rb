@@ -4,3 +4,5 @@ require 'minitest/spec'
 require 'minitest/pride'
 require 'subtle'
 require 'mocha/setup'
+require 'coveralls'
+Coveralls.wear!
