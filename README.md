@@ -8,6 +8,8 @@ Tweet things on twitter.
 
 ## Usage
 
+Point horse at at Twitter account with a list of possible tweets.  When told to, horse will randomly pick a tweet from your list (that has not already been tweeted) and tweet it.
+
 ````ruby
 options = {
             consumer_key:        'your twitter consumer key',
@@ -24,6 +26,8 @@ Horse.setup(options)
 # that have not been tweeted previously
 Horse.tweet_something_new
 ````
+
+For a sample use-case, check out horse_rails at http://www.github.com/darrencauthon/horse_rails, which uses horse in a Rake task and a cron job to automate tweets from a text file stored on Github.
 
 ## Installation
 
