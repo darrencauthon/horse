@@ -1,4 +1,8 @@
-# Horse
+# Horses
+
+[![Build Status](https://travis-ci.org/darrencauthon/horse.png?branch=master)](https://travis-ci.org/darrencauthon/horse)
+[![Code Climate](https://codeclimate.com/github/darrencauthon/horse.png)](https://codeclimate.com/github/darrencauthon/horse)
+[![Coverage Status](https://coveralls.io/repos/darrencauthon/horse/badge.png?branch=master)](https://coveralls.io/r/darrencauthon/horse)
 
 Tweet things on twitter.
 
