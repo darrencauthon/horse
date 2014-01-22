@@ -3,12 +3,14 @@ Dir[File.dirname(__FILE__) + '/horse/*.rb'].each { |file| require file }
 
 module Horse
 
-  def self.twitter_username
-    @options[:twitter_username]
-  end
-
   def self.setup options
     @options = options
+  end
+
+  def self.tweet_something_new
+    funny_tweet = FunnyTweet.next
+    return unless funny_tweet
+    Tweeter.tweet funny_tweet
   end
 
   def self.twitter_client
@@ -20,14 +22,12 @@ module Horse
                 end
   end
 
-  def self.method_to_get_tweets
-    @options[:pending_tweets]
+  def self.twitter_username
+    @options[:twitter_username]
   end
 
-  def self.tweet_something_new
-    funny_tweet = FunnyTweet.next
-    return unless funny_tweet
-    Tweeter.tweet funny_tweet
+  def self.method_to_get_tweets
+    @options[:pending_tweets]
   end
 
 end
