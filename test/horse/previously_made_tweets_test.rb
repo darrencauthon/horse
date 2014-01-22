@@ -11,7 +11,7 @@ describe Horse::PreviouslyMadeTweets do
     tweets = [:text].to_objects { [[Object.new], [Object.new]] }
     client.stubs(:user_timeline).with(twitter_username).returns tweets
 
-    Twitter.stubs(:client).returns client
+    Horse.stubs(:twitter_client).returns client
 
     results = Horse::PreviouslyMadeTweets.all
 
