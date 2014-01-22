@@ -1,6 +1,25 @@
 # Horse
 
-TODO: Write a gem description
+Tweet things on twitter.
+
+## Usage
+
+````ruby
+options = {
+            consumer_key:        'your twitter consumer key',
+            consumer_secret:     'your twitter consumer secret',
+            access_token:        'your twitter access token',
+            access_token_secret: 'your twitter access token secret',
+            twitter_username:    'your twitter username',
+            pending_tweets:      -> { ["here's one tweet",
+                                       "here's another tweet"] }
+          }
+Horse.setup(options)
+
+# this will tweet one of the pending tweets
+# that have not been tweeted previously
+Horse.tweet_something_new
+````
 
 ## Installation
 
@@ -15,10 +34,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install horse
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 
