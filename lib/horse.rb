@@ -20,6 +20,10 @@ module Horse
                 end
   end
 
+  def self.method_to_get_tweets
+    @options[:pending_tweets]
+  end
+
   def self.tweet_something_new
     funny_tweet = FunnyTweet.next
     return unless funny_tweet

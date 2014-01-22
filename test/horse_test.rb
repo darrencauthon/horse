@@ -15,6 +15,12 @@ describe Horse do
       Horse.setup({})
       Horse.twitter_client.is_a?(Twitter::REST::Client).must_equal true
     end
+
+    it "should pass the pending tweets as a block" do
+      method = Object.new
+      Horse.setup( { pending_tweets: method } )
+      Horse.method_to_get_tweets.must_be_same_as method
+    end
   end
 
   describe "tweeting something new" do
