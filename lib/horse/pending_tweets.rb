@@ -1,6 +1,6 @@
 module Horse::PendingTweets
   def self.all
-    IO.readlines("upcoming_tweets.txt").map { |x| x.strip }
+    Horse.method_to_get_tweets.call.map { |x| x.strip }
   end
 end
 

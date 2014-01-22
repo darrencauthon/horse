@@ -1,13 +1,46 @@
 require_relative '../test_helper'
 
 describe Horse::PendingTweets do
-  it "should return something" do
-    (Horse::PendingTweets.all.count > 0).must_equal true
+
+  describe 'one example' do
+
+    let(:tweets) { ['one'] }
+
+    before do
+      method = -> { tweets }
+      Horse.stubs(:method_to_get_tweets).returns method
+    end
+
+    it "should return the tweets" do
+      Horse::PendingTweets.all.must_equal tweets
+    end
   end
 
-  it "should strip all of the values" do
-    Horse::PendingTweets.all.each do |tweet|
-      tweet.strip.must_equal tweet
+  describe 'another example' do
+
+    let(:tweets) { ['one', 'two', 'three'] }
+
+    before do
+      method = -> { tweets }
+      Horse.stubs(:method_to_get_tweets).returns method
+    end
+
+    it "should return the tweets" do
+      Horse::PendingTweets.all.must_equal tweets
+    end
+  end
+
+  describe "example with extra whitespace" do
+
+    let(:tweets) { [' one ', '    two ', "\tthree\n\n\n"] }
+
+    before do
+      method = -> { tweets }
+      Horse.stubs(:method_to_get_tweets).returns method
+    end
+
+    it "should return the tweets" do
+      Horse::PendingTweets.all.must_equal ['one', 'two', 'three']
     end
   end
 end
