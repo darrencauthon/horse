@@ -2,16 +2,8 @@ require_relative 'test_helper'
 
 describe Horse do
 
-  describe "twitter username" do
-    it "should pull from the ENV twitter_username" do
-      username = Object.new
-      ENV.stubs(:[]).with('TWITTER_USERNAME').returns username
-      Horse.twitter_username.must_be_same_as username
-    end
-  end
-
   describe "setting up" do
-    it "should blkjsd" do
+    it "should be able to pull a twitter client" do
       Horse.setup({})
       Horse.twitter_client.is_a?(Twitter::REST::Client).must_equal true
     end
@@ -20,6 +12,12 @@ describe Horse do
       method = Object.new
       Horse.setup( { pending_tweets: method } )
       Horse.method_to_get_tweets.must_be_same_as method
+    end
+
+    it "should pass the twitter username" do
+      username = Object.new
+      Horse.setup( { twitter_username: username } )
+      Horse.twitter_username.must_be_same_as username
     end
   end
 

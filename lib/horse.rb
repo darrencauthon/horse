@@ -4,7 +4,7 @@ Dir[File.dirname(__FILE__) + '/horse/*.rb'].each { |file| require file }
 module Horse
 
   def self.twitter_username
-    ENV['TWITTER_USERNAME']
+    @options[:twitter_username]
   end
 
   def self.setup options
