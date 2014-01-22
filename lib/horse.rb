@@ -15,10 +15,10 @@ module Horse
 
   def self.twitter_client
     @client ||= Twitter::REST::Client.new do |config|
-                  config.consumer_key        = @options['CONSUMER_KEY']
-                  config.consumer_secret     = @options['CONSUMER_SECRET']
-                  config.access_token        = @options['ACCESS_TOKEN']
-                  config.access_token_secret = @options['ACCESS_TOKEN_SECRET']
+                  config.consumer_key        = @options[:consumer_key]
+                  config.consumer_secret     = @options[:consumer_secret]
+                  config.access_token        = @options[:access_token]
+                  config.access_token_secret = @options[:access_token_secret]
                 end
   end
 
